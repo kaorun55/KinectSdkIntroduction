@@ -1,0 +1,8 @@
+﻿<Window x:Class="RgbCamera.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="RgbCamera" Height="521" Width="663" SizeToContent="Manual">
+    <Grid>
+        <Image Name="imageRgbCamera" Margin="0" Stretch="Uniform" />
+    </Grid>
+</Window>
