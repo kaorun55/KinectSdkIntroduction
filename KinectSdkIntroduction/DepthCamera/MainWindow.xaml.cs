@@ -47,6 +47,7 @@ namespace DepthCamera
             imageRgbCamera.Source = e.OpenColorImageFrame().ToBitmapSource();
         }
 
+        // 距離カメラのフレーム更新イベント
         void kinect_DepthFrameReady( object sender, DepthImageFrameReadyEventArgs e )
         {
             imageDepthCamera.Source = e.OpenDepthImageFrame().ToBitmapSource();
