@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaceTracking", "FaceTrackin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkeletonBoneMatrix", "SkeletonBoneMatrix\SkeletonBoneMatrix.csproj", "{7EB61166-5CDC-46A4-AD32-91C2B33B53EC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimapleXnaSample", "SimapleXnaSample\SimapleXnaSample\SimapleXnaSample.csproj", "{F56CB534-FCD5-4596-AB2D-F77BEFC509B9}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "SimapleXnaSampleContent", "SimapleXnaSample\SimapleXnaSampleContent\SimapleXnaSampleContent.contentproj", "{2769D863-39DC-49D2-9128-74628F1CBD76}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -43,6 +47,12 @@ Global
 		{7EB61166-5CDC-46A4-AD32-91C2B33B53EC}.Debug|x86.Build.0 = Debug|x86
 		{7EB61166-5CDC-46A4-AD32-91C2B33B53EC}.Release|x86.ActiveCfg = Release|x86
 		{7EB61166-5CDC-46A4-AD32-91C2B33B53EC}.Release|x86.Build.0 = Release|x86
+		{F56CB534-FCD5-4596-AB2D-F77BEFC509B9}.Debug|x86.ActiveCfg = Debug|x86
+		{F56CB534-FCD5-4596-AB2D-F77BEFC509B9}.Debug|x86.Build.0 = Debug|x86
+		{F56CB534-FCD5-4596-AB2D-F77BEFC509B9}.Release|x86.ActiveCfg = Release|x86
+		{F56CB534-FCD5-4596-AB2D-F77BEFC509B9}.Release|x86.Build.0 = Release|x86
+		{2769D863-39DC-49D2-9128-74628F1CBD76}.Debug|x86.ActiveCfg = Debug|x86
+		{2769D863-39DC-49D2-9128-74628F1CBD76}.Release|x86.ActiveCfg = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
