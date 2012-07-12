@@ -88,7 +88,11 @@ namespace FaceTracking
             }
         }
 
-        // すべてのデータの更新通知を受け取る
+        /// <summary>
+        /// すべてのデータの更新通知を受け取る
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void kinect_AllFramesReady( object sender, AllFramesReadyEventArgs e )
         {
             // Disposableなのでusingでくくる
