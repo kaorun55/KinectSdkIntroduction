@@ -5,6 +5,6 @@
     <Grid>
         <Image HorizontalAlignment="Left" Name="imageRgbCamera" Stretch="Fill" VerticalAlignment="Top" />
         <Image HorizontalAlignment="Left" Name="imageDepthCamera" Stretch="Fill" VerticalAlignment="Top" Opacity="0.7" />
-        <Canvas HorizontalAlignment="Left" Name="canvas1" VerticalAlignment="Top" />
+        <Canvas HorizontalAlignment="Left" Name="canvasSkeleton" VerticalAlignment="Top" />
     </Grid>
 </Window>
