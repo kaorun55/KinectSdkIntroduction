@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DepthAndPlayerIndex", "Dept
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skeleton", "Skeleton\Skeleton.csproj", "{16D5FA1E-FF53-4FFE-80A1-83D968121761}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaceTracking", "FaceTracking\FaceTracking.csproj", "{D65EBFF5-ED8A-46B7-85FC-286A7C5C75E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkeletonBoneMatrix", "SkeletonBoneMatrix\SkeletonBoneMatrix.csproj", "{7EB61166-5CDC-46A4-AD32-91C2B33B53EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -31,6 +35,14 @@ Global
 		{16D5FA1E-FF53-4FFE-80A1-83D968121761}.Debug|x86.Build.0 = Debug|x86
 		{16D5FA1E-FF53-4FFE-80A1-83D968121761}.Release|x86.ActiveCfg = Release|x86
 		{16D5FA1E-FF53-4FFE-80A1-83D968121761}.Release|x86.Build.0 = Release|x86
+		{D65EBFF5-ED8A-46B7-85FC-286A7C5C75E4}.Debug|x86.ActiveCfg = Debug|x86
+		{D65EBFF5-ED8A-46B7-85FC-286A7C5C75E4}.Debug|x86.Build.0 = Debug|x86
+		{D65EBFF5-ED8A-46B7-85FC-286A7C5C75E4}.Release|x86.ActiveCfg = Release|x86
+		{D65EBFF5-ED8A-46B7-85FC-286A7C5C75E4}.Release|x86.Build.0 = Release|x86
+		{7EB61166-5CDC-46A4-AD32-91C2B33B53EC}.Debug|x86.ActiveCfg = Debug|x86
+		{7EB61166-5CDC-46A4-AD32-91C2B33B53EC}.Debug|x86.Build.0 = Debug|x86
+		{7EB61166-5CDC-46A4-AD32-91C2B33B53EC}.Release|x86.ActiveCfg = Release|x86
+		{7EB61166-5CDC-46A4-AD32-91C2B33B53EC}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
