@@ -10,22 +10,27 @@ namespace RgbCamera
     /// </summary>
     public partial class MainWindow : Window
     {
+        KinectSensor kinect;
+
         public MainWindow()
         {
             InitializeComponent();
 
             try {
-                if ( KinectSensor.KinectSensors.Count == 0 ) {
-                    throw new Exception( "Kinectが接続されていません" );
+                // 利用可能なKinectを探す
+                foreach ( var k in KinectSensor.KinectSensors ) {
+                    if ( k.Status == KinectStatus.Connected ) {
+                        kinect = k;
+                        break;
+                    }
+                }
+                if ( kinect == null ) {
+                    throw new Exception( "利用可能なKinectがありません" );
                 }
 
-                // Kinectインスタンスを取得する
-                KinectSensor kinect = KinectSensor.KinectSensors[0];
-
                 // Colorを有効にする
-                kinect.ColorFrameReady +=
-                    new EventHandler<ColorImageFrameReadyEventArgs>( kinect_ColorFrameReady );
-                kinect.ColorStream.Enable();
+                kinect.ColorFrameReady += new EventHandler<ColorImageFrameReadyEventArgs>( kinect_ColorFrameReady );
+                kinect.ColorStream.Enable( ColorImageFormat.RgbResolution640x480Fps30 );
 
                 // Kinectの動作を開始する
                 kinect.Start();
@@ -38,7 +43,12 @@ namespace RgbCamera
 
         void kinect_ColorFrameReady( object sender, ColorImageFrameReadyEventArgs e )
         {
-            imageRgbCamera.Source = e.OpenColorImageFrame().ToBitmapSource();
+            // Disposableなのでusingでくくる
+            using ( ColorImageFrame imageFrame = e.OpenColorImageFrame() ) {
+                if ( imageFrame != null ) {
+                    imageRgbCamera.Source = imageFrame.ToBitmapSource();
+                }
+            }
         }
     }
 }
