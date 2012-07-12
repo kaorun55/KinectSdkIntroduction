@@ -2,6 +2,7 @@
 using System.Windows;
 using Coding4Fun.Kinect.Wpf;
 using Microsoft.Kinect;
+using System.Diagnostics;
 
 namespace DepthAndPlayerIndex
 {
@@ -10,17 +11,23 @@ namespace DepthAndPlayerIndex
     /// </summary>
     public partial class MainWindow : Window
     {
+        KinectSensor kinect;
+
         public MainWindow()
         {
             InitializeComponent();
 
             try {
-                if ( KinectSensor.KinectSensors.Count == 0 ) {
-                    throw new Exception( "Kinectが接続されていません" );
+                // 利用可能なKinectを探す
+                foreach ( var k in KinectSensor.KinectSensors ) {
+                    if ( k.Status == KinectStatus.Connected ) {
+                        kinect = k;
+                        break;
+                    }
                 }
-
-                // Kinectインスタンスを取得する
-                KinectSensor kinect = KinectSensor.KinectSensors[0];
+                if ( kinect == null ) {
+                    throw new Exception( "利用可能なKinectがありません" );
+                }
 
                 // すべてのフレーム更新通知をもらう
                 kinect.AllFramesReady += new EventHandler<AllFramesReadyEventArgs>( kinect_AllFramesReady );
@@ -42,8 +49,19 @@ namespace DepthAndPlayerIndex
         // すべてのデータの更新通知を受け取る
         void kinect_AllFramesReady( object sender, AllFramesReadyEventArgs e )
         {
-            imageRgbCamera.Source = e.OpenColorImageFrame().ToBitmapSource();
-            imageDepthCamera.Source = e.OpenDepthImageFrame().ToBitmapSource();
+            // Disposableなのでusingでくくる
+            using ( ColorImageFrame colorFrame = e.OpenColorImageFrame() ) {
+                if ( colorFrame != null ) {
+                    imageRgbCamera.Source = colorFrame.ToBitmapSource();
+                }
+            }
+
+            // Disposableなのでusingでくくる
+            using ( DepthImageFrame depthFrame = e.OpenDepthImageFrame() ) {
+                if ( depthFrame != null ) {
+                    imageDepthCamera.Source = depthFrame.ToBitmapSource();
+                }
+            }
         }
     }
 }

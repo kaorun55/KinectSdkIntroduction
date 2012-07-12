@@ -51,6 +51,7 @@ namespace DepthCamera
         // RGBカメラのフレーム更新イベント
         void kinect_ColorFrameReady( object sender, ColorImageFrameReadyEventArgs e )
         {
+            // Disposableなのでusingでくくる
             using ( ColorImageFrame colorFrame = e.OpenColorImageFrame() ) {
                 if ( colorFrame != null ) {
                     imageRgbCamera.Source = colorFrame.ToBitmapSource();
@@ -61,6 +62,7 @@ namespace DepthCamera
         // 距離カメラのフレーム更新イベント
         void kinect_DepthFrameReady( object sender, DepthImageFrameReadyEventArgs e )
         {
+            // Disposableなのでusingでくくる
             using ( DepthImageFrame depthFrame = e.OpenDepthImageFrame() ) {
                 if ( depthFrame != null ) {
                     imageDepthCamera.Source = depthFrame.ToBitmapSource();
