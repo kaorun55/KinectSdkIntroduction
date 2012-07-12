@@ -44,9 +44,9 @@ namespace RgbCamera
         void kinect_ColorFrameReady( object sender, ColorImageFrameReadyEventArgs e )
         {
             // Disposableなのでusingでくくる
-            using ( ColorImageFrame imageFrame = e.OpenColorImageFrame() ) {
-                if ( imageFrame != null ) {
-                    imageRgbCamera.Source = imageFrame.ToBitmapSource();
+            using ( ColorImageFrame colorFrame = e.OpenColorImageFrame() ) {
+                if ( colorFrame != null ) {
+                    imageRgbCamera.Source = colorFrame.ToBitmapSource();
                 }
             }
         }
